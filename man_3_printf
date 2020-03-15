@@ -1,0 +1,16 @@
+.TH man 1 "15 March 2020" "1.0" "_printf man page"
+.SH NAME
+_printf
+.SH SYNOPSIS
+_printf(CONST CHAR *FORMAT, ...);
+.SH DESCRIPTION
+_printf produces output according to a specified format and writes output to
+stdout, the standard output stream.
+.SH EXAMPLE
+To print a char:
+   _printf("%c", T) - prints the character T to stdout.
+
+To print a string:
+   _printf("%s", t) - prints a string stored in the variable t.
+.SH AUTHOR
+Ian Culp & Tahlia Roper
