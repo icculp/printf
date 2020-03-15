@@ -2,7 +2,8 @@
 
 /**
 * _printf - Functional printf
-* @format: 
+* @format: Argument formats
+* Return: Success
 */
 
 int _printf(const char *format, ...)
@@ -10,17 +11,14 @@ int _printf(const char *format, ...)
 	va_list arglist;
 	int i;
 	const char *fcopy;
-	char c;
-	char *s;
+	char c, *s;
 
 	va_start(arglist, format);
-
 	if (format == NULL)
 		return;
-
 	for (fcopy = format; *fcopy != '\0'; fcopy++)
 	{
-		while(*fcopy != '%')
+		while (*fcopy != '%')
 		{
 			write(1, fcopy, 1);
 			fcopy++;
@@ -31,7 +29,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		fcopy++;
-		switch(*fcopy)
+		switch (*fcopy)
 		{
 			case 'c':
 				c = va_arg(arglist, int);
