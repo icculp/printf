@@ -20,6 +20,7 @@ typedef struct dtype
 
 int _strlen(char *s);
 int _printf(const char *format, ...);
+int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[]);
 
 int c_function(va_list);
 int s_function(va_list);
