@@ -9,10 +9,9 @@
 int _printf(const char *format, ...)
 {
 	va_list arglist;
-	int i = 0; 
-	int *count = 0;
+	int i = 0, count = 0;
 	const char *fcopy;
-	const char *temp;
+	char c, *s, *tempf;
 	dtype handler[] = 	{
 		{"c", c_function},
 		{"s", s_function},
@@ -38,19 +37,14 @@ int _printf(const char *format, ...)
 		}
 		fcopy++;
 		count++;
-		i = 0;
 		while (handler[i].type != NULL)
 		{
-			temp = handler[i].type;
-			while (*fcopy == *temp)
-			{
-				count += handler[i].f(arglist);
-				break;
-			}
+			tempf = fcopy[0];
+			if (strcmp(tempf, handler[i].type) == 0)
+				count += handler[i].f;
 			i++;
 		}
 	}
 	va_end(arglist);
-	write(1, count, 4);
 	return (count);
-
+}
