@@ -1,40 +1,58 @@
 #include "holberton.h"
-#include <stdlib.h>
-#include <stdio.h>
+
 /**
- *signed_int - prints a signed integer to stdout
- *
- *@arglist:
- *Return: writes the integer to stdout
- */
-void inttostring(char str[], int num);
-int signed_int(va_list arglist)
+* print_int - prints a signed integer to stdout
+* @arglist: Args vars
+* Return: Number of chars written
+*/
+
+int print_int(va_list arglist)
 {
 	int d;
 	char *b;
 
 	d = va_arg(arglist, int);
-
-	inttostring(b, d);
-
+	b = itos(d);
 	write(1, b, _strlen(b));
+	d = _strlen(b);
+	free(b);
+	return (d);
 }
-void inttostring(char str[], int num)
+
+/**
+* itos - Converts int to string
+* @num: Number to be convered
+* Return: Buffer containing string
+*/
+
+char *itos(int num)
 {
 	int i, rem, len = 0, n;
+	char *s;
 
+	if (num < 0)
+	{
+		len++;
+	}
 	n = num;
 	while (n != 0)
 	{
 		len++;
 		n /= 10;
 	}
-	for (i = 0; i < len; i++)
+	s = malloc(sizeof(char) * (len + 1));
+	if (num < 0)
+		n = num * -1;
+	else
+		n = num;
+	for (i = len - 1; i >= 0; i--)
 	{
-		rem = num % 10;
-		num = num / 10;
-		str[len - (i - 1)] = rem + '0';
+		rem = n % 10;
+		n = n / 10;
+		s[i] = rem + '0';
 	}
-	str[len] = '\0';
-
+	if (num < 0)
+		s[0] = '-';
+	s[len] = '\0';
+	return (s);
 }

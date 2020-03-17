@@ -14,6 +14,9 @@ int _printf(const char *format, ...)
 		{"c", c_function},
 		{"s", s_function},
 		{"%", modulo_function},
+		{"i", print_int},
+		{"d", print_int},
+		{"b", print_bin},
 		{NULL, NULL}
 				};
 
