@@ -27,14 +27,22 @@ int print_int(va_list arglist)
 
 char *itos(int num)
 {
-	int i, rem, len = 0, n;
+	int i;
+	unsigned int rem, len = 0, n;
 	char *s;
 
 	if (num < 0)
 	{
 		len++;
+		if (num != -2147483648)
+			n = (num * -1);
+		else
+		{
+			n = num;
+		}
 	}
-	n = num;
+	else
+		n = num;
 	while (n != 0)
 	{
 		len++;
@@ -42,9 +50,15 @@ char *itos(int num)
 	}
 	s = malloc(sizeof(char) * (len + 1));
 	if (num < 0)
-		n = num * -1;
-	else
-		n = num;
+	{
+		len++;
+		if (num != -2147483648)
+			n = (num * -1);
+		else
+		{
+			n = num;
+		}
+	}
 	for (i = len - 1; i >= 0; i--)
 	{
 		rem = n % 10;
