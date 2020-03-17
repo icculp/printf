@@ -22,10 +22,20 @@ int _strlen(char *s);
 int _printf(const char *format, ...);
 int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[]);
 
+/** 0 */
 int c_function(va_list);
 int s_function(va_list);
 int modulo_function(va_list);
 int rev_string(va_list);
 int _putchar(char c);
+
+/** 1 */
+char *itos(int num);
+int print_int(va_list arglist);
+
+/** 3 */
+long int int_to_binary(unsigned int binum);
+char *bintos(long int num);
+int print_bin(va_list arglist);
 
 #endif
