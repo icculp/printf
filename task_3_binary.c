@@ -6,10 +6,9 @@
  * Return: Binary number in long format
  */
 
-long int int_to_binary(unsigned int binum)
+unsigned int_to_binary(unsigned int binum)
 {
-	long int binary = 0;
-	int count, r, t = 1;
+	unsigned int binary = 0, count, r, t = 1;
 
 	count = 0;
 	while (binum != 0)
@@ -31,8 +30,7 @@ long int int_to_binary(unsigned int binum)
 
 int print_bin(va_list arglist)
 {
-	unsigned int d;
-	long int bin;
+	unsigned int d, bin;
 	char *b;
 
 	d = va_arg(arglist, unsigned int);
@@ -50,12 +48,13 @@ int print_bin(va_list arglist)
 * Return: Buffer containing string
 */
 
-char *bintos(long int num)
+char *bintos(unsigned int num)
 {
-	long int i, rem, len = 0, n;
+	unsigned int rem, len = 0, n;
 	char *s;
+	int i;
 
-	if (num < 0)
+	if (num == 0)
 	{
 		len++;
 	}
@@ -66,18 +65,17 @@ char *bintos(long int num)
 		n /= 10;
 	}
 	s = malloc(sizeof(char) * (len + 1));
-	if (num < 0)
-		n = num * -1;
-	else
-		n = num;
+	if (s == NULL)
+		return (NULL);
+	n = num;
 	for (i = len - 1; i >= 0; i--)
 	{
 		rem = n % 10;
 		n = n / 10;
 		s[i] = rem + '0';
 	}
-	if (num < 0)
-		s[0] = '-';
+/**	if (num < 0)
+		s[0] = '-';*/
 	s[len] = '\0';
 	return (s);
 }
