@@ -37,9 +37,7 @@ char *itos(int num)
 		if (num != -2147483648)
 			n = (num * -1);
 		else
-		{
 			n = num;
-		}
 	}
 	else
 		n = num;
@@ -51,14 +49,13 @@ char *itos(int num)
 	s = malloc(sizeof(char) * (len + 1));
 	if (num < 0)
 	{
-		len++;
 		if (num != -2147483648)
 			n = (num * -1);
 		else
-		{
 			n = num;
-		}
 	}
+	else
+		n = num;
 	for (i = len - 1; i >= 0; i--)
 	{
 		rem = n % 10;
