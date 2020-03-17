@@ -5,4 +5,5 @@
 int main()
 {
 	int b = 17;
-	dec_
+	return (0);
+}

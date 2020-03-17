@@ -3,7 +3,7 @@
 /**
  * print_unsigned - prints an unsigned int in decimal notation
  *@arglist: Args vars
- *Return - count of digits.
+ *Return: Count of digits.
  */
 
 int print_unsigned(va_list arglist)
