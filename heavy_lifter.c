@@ -35,7 +35,7 @@ int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[])
 			while (*fcopy == *temp)
 			{
 				ct += handler[i].f(arglist);
-				tempcount = 98;
+				tempcount = 98;/** To avoid next loop */
 				break;
 			}
 			i++;
