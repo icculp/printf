@@ -25,6 +25,11 @@ int s_function(va_list arglist)
 {
 	char *s = va_arg(arglist, char *);
 
+	if (s == NULL)
+{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	return (write(1, s, _strlen(s)));
 }
 
