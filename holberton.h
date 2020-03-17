@@ -25,5 +25,7 @@ int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[]);
 int c_function(va_list);
 int s_function(va_list);
 int modulo_function(va_list);
+int rev_string(va_list);
+int _putchar(char c);
 
 #endif
