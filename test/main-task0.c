@@ -7,9 +7,11 @@
 
 int main(void)
 {
-	char c = 'c';
-	char *s = "String";
-	
-	_printf(NULL);
+/*har c = 'c';
+	char *s = "String";*/
+	int i;
+/* = _printf("I am printing a % %tring full of %characters and %ss, and sometimes a %%.", c, s);*/
+	i = _printf(" % ");
+	printf("count%d\n", i);
 	return (0);
 }
