@@ -10,10 +10,10 @@ int rev_string(va_list arglist)
 {
 	char *s;
 	int i = 0;
-	int j;
+	int j, k;
 
 	s = va_arg(arglist, char *);
-
+	k = _strlen(s);
 	while (*s != '\0')
 	{
 		s++;
@@ -25,7 +25,9 @@ int rev_string(va_list arglist)
 		_putchar(*s);
 		s--;
 	}
+	return (k);
 }
+
 /**
  *_putchar - writes character c to stdout
  *@c: the char to print
