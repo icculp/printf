@@ -15,7 +15,7 @@ int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[])
 	const char *fcopy, *temp;
 
 	if (format == NULL)
-		return (ct);
+		return (-1);
 	for (fcopy = format; *fcopy != '\0'; fcopy++)
 	{
 		while (*fcopy != '%')

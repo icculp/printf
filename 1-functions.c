@@ -12,6 +12,7 @@ int print_int(va_list arglist)
 	char *b;
 
 	d = va_arg(arglist, int);
+	printf("d: %d\n", d);
 	b = itos(d);
 	write(1, b, _strlen(b));
 	d = _strlen(b);
@@ -31,7 +32,7 @@ char *itos(int num)
 	unsigned int rem, len = 0, n;
 	char *s;
 
-	if (num < 0)
+	if (num <= 0)
 	{
 		len++;
 		if (num != -2147483648)
