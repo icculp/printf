@@ -15,7 +15,8 @@ int rot13_function(va_list arglist)
 	int i, n, count;
 
 	rot = va_arg(arglist, char *);
-
+	if (rot == NULL)
+		rot = "(ahyy)";
 
 	for (i = 0; rot[i] != '\0'; i++)
 	{
