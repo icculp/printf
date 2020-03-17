@@ -21,6 +21,28 @@ int print_int(va_list arglist)
 }
 
 /**
+* itos_helper - Refactored itos to reduce line count under 40
+* @num: Num to check and return n
+* Return: n
+*/
+
+int itos_helper(int num)
+{
+	int n;
+
+	if (num < 0)
+	{
+		if (num != -2147483648)
+			n = (num * -1);
+		else
+			n = num;
+	}
+	else
+		n = num;
+	return (n);
+}
+
+/**
 * itos - Converts int to string
 * @num: Number to be convered
 * Return: Buffer containing string
@@ -48,15 +70,9 @@ char *itos(int num)
 		n /= 10;
 	}
 	s = malloc(sizeof(char) * (len + 1));
-	if (num < 0)
-	{
-		if (num != -2147483648)
-			n = (num * -1);
-		else
-			n = num;
-	}
-	else
-		n = num;
+	if (s == NULL)
+		return (NULL);
+	n = itos_helper(num);
 	for (i = len - 1; i >= 0; i--)
 	{
 		rem = n % 10;
