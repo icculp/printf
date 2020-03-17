@@ -12,7 +12,7 @@ int print_int(va_list arglist)
 	char *b;
 
 	d = va_arg(arglist, int);
-	printf("d: %d\n", d);
+/**	printf("d: %d\n", d);*/
 	b = itos(d);
 	write(1, b, _strlen(b));
 	d = _strlen(b);
