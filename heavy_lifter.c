@@ -21,17 +21,14 @@ int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[])
 		while (*fcopy != '%')
 		{
 			write(1, fcopy, 1);
-			fcopy++;
-			ct++;
+			fcopy++, ct++;
 			if (*fcopy == '\0')
 			{
 				va_end(arglist);
 				return (ct);
 			}
 		}
-		fcopy++;
-		i = 0;
-		tempcount = ct;
+		fcopy++, i = 0,	tempcount = ct;
 		while (handler[i].type != NULL)
 		{
 			temp = handler[i].type;
@@ -45,8 +42,7 @@ int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[])
 		while (handler[i].type == NULL && (tempcount == ct))
 		{
 			write(1, "%", 1);
-			ct++;
-			fcopy--;
+			ct++, fcopy--;
 			break;
 		}
 	}
