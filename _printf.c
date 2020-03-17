@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{"d", print_int},
 		{"b", print_bin},
 		{"r", rev_string},
+		{"R", rot13_function},
 		{NULL, NULL}
 				};
 
