@@ -35,8 +35,6 @@ int print_int(va_list arglist);
 int itos_helper(int num);
 
 /** 3 */
-unsigned int_to_binary(unsigned int binum);
-char *bintos(unsigned int num);
 int print_bin(va_list arglist);
 
 /** 14 */
