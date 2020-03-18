@@ -43,7 +43,7 @@ int print_unsigned(va_list arglist)
 int print_octal(va_list arglist)
 {
 	unsigned int octal = 0, i = 1, num;
-	int remainder;
+	int d, remainder;
 	char *octstr;
 
 	num = va_arg(arglist, unsigned int);
@@ -60,5 +60,9 @@ int print_octal(va_list arglist)
 
 	write(1, octstr, _strlen(octstr));
 
-	return (_strlen(octstr));
+	d = _strlen(octstr);
+
+	free(octstr);
+
+	return (d);
 }
