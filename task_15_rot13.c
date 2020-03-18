@@ -17,7 +17,7 @@ int rot13_function(va_list arglist)
 	rot = va_arg(arglist, char *);
 
 	if (rot == NULL)
-		rot = "(nill)";
+		return (-1);
 
 	for (i = 0; rot[i] != '\0'; i++)
 	{
@@ -29,6 +29,9 @@ int rot13_function(va_list arglist)
 				count++;
 				break;
 			}
+			else
+				new[i] = rot[i];
+
 		}
 	}
 	write(1, new, _strlen(new));
