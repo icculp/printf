@@ -11,7 +11,7 @@ int main(void)
 	char *s = "String";*/
 	int i;
 /* = _printf("I am printing a % %tring full of %characters and %ss, and sometimes a %%.", c, s);*/
-	i = _printf(" %y");
+	i = _printf("%");
 	printf("count%d\n", i);
 	return (0);
 }

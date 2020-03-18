@@ -28,6 +28,8 @@ int heavy_lifter(va_list arglist, const char *format, int ct, dtype handler[])
 				return (ct);
 			}
 		}
+		if (*(fcopy + 1) == '\0')
+			exit(-1);
 		fcopy++, i = 0,	tempcount = ct;
 		while (handler[i].type != NULL)
 		{
