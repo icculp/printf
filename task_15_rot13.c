@@ -16,6 +16,8 @@ int rot13_function(va_list arglist)
 
 	rot = va_arg(arglist, char *);
 
+	if (rot == NULL)
+		rot = "(nill)";
 
 	for (i = 0; rot[i] != '\0'; i++)
 	{
