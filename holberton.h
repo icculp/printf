@@ -39,6 +39,7 @@ int print_bin(va_list arglist);
 
 /** 4 */
 int print_unsigned(va_list);
+int print_octal(va_list);
 
 /** 14 */
 int rev_string(va_list);

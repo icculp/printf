@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"r", rev_string},
 		{"R", rot13_function},
 		{"u", print_unsigned},
+		{"o", print_octal},
 		{NULL, NULL}
 				};
 

@@ -34,3 +34,27 @@ int print_unsigned(va_list arglist)
 	}
 	return (ct);
 }
+/**
+ *print_octal - converts int to octal notation
+ *@va_list: Args vars
+ *Return: character count
+ */
+int print_octal(va_list arglist)
+{
+	int octal[10], num, i, j;
+
+	num = va_arg(arglist unsigned int);
+
+	for (i = 0; num > 0; i++)
+	{
+		octal[i] = num % 8;
+		number = number / 8;
+	}
+	for (j = i = 1; j > 0; j--)
+	{
+		write(1, octal, _strlen(octal));
+	}
+	b = _strlen(octal);
+
+	return (b);
+}
