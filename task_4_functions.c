@@ -9,19 +9,24 @@
 
 int print_hex_lower(va_list arglist)
 {
-	int n;
+	int n, m = 0;
 	int i = 12;
 	int j = 0;
 	char outbuf[20];
 
 	n = va_arg(arglist, int);
+	if (n < 0)
+	{
+		n = -n;
+		m = 1;
+	}
 	do {
 	outbuf[i] = "0123456789abcdef"[n % 16];
 	i--;
 	n = n / 16;
 	} while (n > 0);
 
-	if (n < 0)
+	if (m == 1)
 	{
 		outbuf[0] = '-';
 		++j;
@@ -43,19 +48,24 @@ int print_hex_lower(va_list arglist)
 
 int print_hex_upper(va_list arglist)
 {
-	int n;
+	int n, m = 0;
 	int i = 12;
 	int j = 0;
 	char outbuf[20];
 
 	n = va_arg(arglist, int);
+	if (n < 0)
+	{
+		n = -n;
+		m = 1;
+	}
 	do {
 	outbuf[i] = "0123456789ABCDEF"[n % 16];
 	i--;
 	n = n / 16;
 	} while (n > 0);
 
-	if (n < 0)
+	if (m == 1)
 	{
 		outbuf[0] = '-';
 		++j;
