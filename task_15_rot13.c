@@ -29,10 +29,10 @@ int rot13_function(va_list arglist)
 				count++;
 				break;
 			}
+			else
+				new[i] = rot[i];
 
 		}
-		if (rot[i] != start[n])
-			new[i] = rot[i];
 	}
 	write(1, new, _strlen(new));
 	return (count);
