@@ -21,6 +21,8 @@ int _printf(const char *format, ...)
 		{"R", rot13_function},
 		{"u", print_unsigned},
 		{"o", print_octal},
+		{"x", print_hex_lower},
+		{"X", print_hex_upper},
 		{NULL, NULL}
 				};
 

@@ -1,5 +1,74 @@
 #include "holberton.h"
 
+
+/**
+* print_hex_lower - Prints hex in upper case
+* @arglist: Args vars
+* Return: Number of chars written
+*/
+
+int print_hex_lower(va_list arglist)
+{
+	int n;
+	int i = 12;
+	int j = 0;
+	char outbuf[20];
+
+	n = va_arg(arglist, int);
+	do {
+	outbuf[i] = "0123456789abcdef"[n % 16];
+	i--;
+	n = n / 16;
+	} while (n > 0);
+
+	if (n < 0)
+	{
+		outbuf[0] = '-';
+		++j;
+	}
+	while (++i < 13)
+	{
+		outbuf[j++] = outbuf[i];
+	}
+	outbuf[j] = 0;
+	write(1, outbuf, strlen(outbuf));
+	return (strlen(outbuf));
+}
+
+/**
+* print_hex_upper - Prints hex in upper case
+* @arglist: Args vars
+* Return: Number of chars written
+*/
+
+int print_hex_upper(va_list arglist)
+{
+	int n;
+	int i = 12;
+	int j = 0;
+	char outbuf[20];
+
+	n = va_arg(arglist, int);
+	do {
+	outbuf[i] = "0123456789ABCDEF"[n % 16];
+	i--;
+	n = n / 16;
+	} while (n > 0);
+
+	if (n < 0)
+	{
+		outbuf[0] = '-';
+		++j;
+	}
+	while (++i < 13)
+	{
+		outbuf[j++] = outbuf[i];
+	}
+	outbuf[j] = 0;
+	write(1, outbuf, strlen(outbuf));
+	return (strlen(outbuf));
+}
+
 /**
  * print_unsigned - prints an unsigned int in decimal notation
  *@arglist: Args vars
