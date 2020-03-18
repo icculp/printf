@@ -36,7 +36,7 @@ int print_unsigned(va_list arglist)
 }
 /**
  *print_octal - converts int to octal notation
- *@va_list: Args vars
+ *@arglist: Args vars
  *Return: character count
  */
 
