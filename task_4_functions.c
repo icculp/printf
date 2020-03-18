@@ -39,22 +39,26 @@ int print_unsigned(va_list arglist)
  *@arglist: Args vars
  *Return: character count
  */
+
 int print_octal(va_list arglist)
 {
-	int octal[10], num, i, j;
+	unsigned int octal = 0, i = 1, num;
+	int remainder;
+	char *octstr;
 
-	num = va_arg(arglist unsigned int);
+	num = va_arg(arglist, unsigned int);
 
-	for (i = 0; num > 0; i++)
+
+	while (num != 0)
 	{
-		octal[i] = num % 8;
-		number = number / 8;
+		remainder = num % 8;
+		num = num / 8;
+		octal = octal + (remainder * i);
+		i = i * 10;
 	}
-	for (j = i = 1; j > 0; j--)
-	{
-		write(1, octal, _strlen(octal));
-	}
-	b = _strlen(octal);
+	octstr = itos(octal);
 
-	return (b);
+	write(1, octstr, _strlen(octstr));
+
+	return (_strlen(octstr));
 }
